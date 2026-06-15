@@ -5,33 +5,7 @@ description = "A standard template for a basic ML workflow."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-# Core ML/Data Science
-"numpy",
-"scikit-learn",
-"torch",
-"torchvision",
-"transformers",
-"pandas",
-"matplotlib",
-"seaborn",
-
-# Big Data / Performance
-"polars",  # Fast DataFrame library
-"pyarrow", # Columnar data format
-
-# Jupyter ecosystem
-"jupyter",
-"ipykernel",
-
-# Utilities
-"tqdm",    # Progress bars
-"ty",   # CLI framework (ty from Astral)
-
-# Code quality
-"ruff",
-
-# Datasets
-"ucimlrepo"
+    "fastmcp>=3.4.2",
 ]
 
 [tool.ruff]
