@@ -1,0 +1,42 @@
+[project]
+name = "python-template"
+version = "0.1.0"
+description = "A standard template for a basic ML workflow."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+# Core ML/Data Science
+"numpy",
+"scikit-learn",
+"torch",
+"torchvision",
+"transformers",
+"pandas",
+"matplotlib",
+"seaborn",
+
+# Big Data / Performance
+"polars",  # Fast DataFrame library
+"pyarrow", # Columnar data format
+
+# Jupyter ecosystem
+"jupyter",
+"ipykernel",
+
+# Utilities
+"tqdm",    # Progress bars
+"ty",   # CLI framework (ty from Astral)
+
+# Code quality
+"ruff",
+
+# Datasets
+"ucimlrepo"
+]
+
+[tool.ruff]
+line-length = 107
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]  # Basic linting + import sorting
