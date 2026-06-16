@@ -1,12 +1,27 @@
 [project]
-name = "python-template"
+name = "digital-library-mcp"
 version = "0.1.0"
-description = "A standard template for a basic ML workflow."
+description = "MCP server for organizing a digital library of books."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "fastmcp>=3.4.2",
+    "fastmcp",
+    "ebooklib",
+    "pymupdf",
 ]
+
+[project.scripts]
+digital-library = "src.book_tools:main"
+
+[tool.uv]
+package = true
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
 
 [tool.ruff]
 line-length = 107
@@ -14,3 +29,8 @@ target-version = "py313"
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I"]  # Basic linting + import sorting
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15.17",
+]
